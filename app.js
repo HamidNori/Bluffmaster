@@ -52,76 +52,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 
+
+
   
-// Open Modal
-const buyButton = document.getElementById('buy-button');
-const checkoutModal = document.getElementById('checkout-modal');
-const closeModal = document.querySelector('.close');
-
-buyButton.addEventListener('click', () => {
-  checkoutModal.style.display = 'block'; // Show modal
-  document.body.style.overflow = 'hidden'; // Prevent background scrolling
-});
-
-// Close Modal
-closeModal.addEventListener('click', () => {
-  checkoutModal.style.display = 'none'; // Hide modal
-  document.body.style.overflow = 'auto'; // Re-enable background scrolling
-});
-
-// Close Modal When Clicking Outside Content
-window.addEventListener('click', (event) => {
-  if (event.target === checkoutModal) {
-    checkoutModal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-});
-
-// Form Submission
-const checkoutForm = document.getElementById('checkout-form');
-checkoutForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent default form submission
-
-  // Collect Form Data
-  const formData = new FormData(checkoutForm);
-  const data = Object.fromEntries(formData.entries());
-
-  // Simulate Checkout Process
-  alert(`Tack för ditt köp, ${data.name}!\nDitt spel skickas till:\n${data.address}\nBetalningsmetod: ${data.payment}`);
-
-  // Close Modal and Reset Form
-  checkoutModal.style.display = 'none';
-  document.body.style.overflow = 'auto';
-  checkoutForm.reset();
-});
-
-
-document.getElementById('preorder-form').addEventListener('submit', async (event) => {
-    event.preventDefault();
+      fetch(
+        "https://script.google.com/macros/s/AKfycbzeOmcqPUQQ7bNomPQG_ORk13ct3OZMA5Nt2rgx8Ze-JKmMbWK3GATVCpdCgX2LEesS/exec",
+        {
+          method: "POST",
+          mode: "no-cors", // Bypass CORS restrictions
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      )
+        .then(() => {
+          // Display success message
+          messageElement.textContent = "Data submitted successfully!";
+          messageElement.style.backgroundColor = "green";
+          messageElement.style.color = "white";
+          submitButton.disabled = false;
+          this.reset();
   
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-  
-    try {
-      const response = await fetch('/api/preorder', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-  
-      const result = await response.json();
-  
-      if (result.success) {
-        alert('Tack för din förbeställning! Vi har skickat ett e-postmeddelande.');
-      } else {
-        alert('Något gick fel. Försök igen senare.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Kunde inte skicka förbeställningen. Försök igen senare.');
-    }
-  });
+          // Hide the message after a short delay
+          setTimeout(() => {
+            messageElement.textContent = "";
+            messageElement.style.display = "none";
+          }, 3000);
+        })
+        .catch((error) => {
+          console.error(error);
+          messageElement.textContent =
+            "An error occurred while submitting the form.";
+          messageElement.style.backgroundColor = "red";
+          messageElement.style.color = "white";
+          messageElement.style.display = "block";
+        });
+;
+
   
