@@ -17,9 +17,9 @@
     <ul>
       <li><a href="#home">Hem</a></li>
       <li><a href="#about">Om</a></li>
-      <li><a href="#product">Produkter</a></li>
-      <li><a href="#reviews">Recensioner</a></li>
-      <li><a href="#contact">Kontakter</a></li>
+      <li><a href="#preorder">Produkter</a></li>
+      <li><a href="#gallery">Galleri</a></li>
+      <li><a href="#info">Kontakter</a></li>
     </ul>
   </nav>
 
@@ -28,60 +28,118 @@
     <div class="container">
       <h1 class="gradient-text">Bluffspelet</h1>
       <p class="gradient-text-small">Kortleken som gör dina spelkvällar oförglömliga.</p>
-      <a href="#product" class="btn">Köp Nu</a>
+      <a href="#preorder" class="btn">Köp Nu</a>
     </div>
   </header>
 
   <!-- About Section -->
-  <section id="about" class="about reveal">
-    <div class="container">
-      <h2 class="gradient-text">Vad är Bluffspelet?</h2>
-      <p>Bluffspelet är en unik kortlek fylld med bluffar, skratt och utmaningar. Perfekt för spelkvällar med vänner och familj!</p>
+<section id="about" class="about reveal">
+  <div class="container">
+    <h2 class="gradient-text">Vad är Bluffspelet?</h2>
+    <p class="intro-text">Bluffspelet är en unik kortlek fylld med bluffar, skratt och utmaningar – perfekt för spelkvällar med vänner och familj!</p>
+  </div>
+
+  <div class="container game-details">
+    <h2>Mer om Bluffspelet</h2>
+    <div class="game-info">
+      <p>
+        Bluffspelet är ett kortspel designat för att skapa maximalt skratt och spänning för hela familjen. Med humoristiska
+        påståenden, utmanande straff och möjligheten att bluffa dig igenom varje runda, erbjuder spelet en unik upplevelse
+        varje gång.
+      </p>
+      <ul class="game-details-list">
+        <li><strong>Antal Kort:</strong> 54 högkvalitativa kort</li>
+        <li><strong>Spelarnas Ålder:</strong> Från 12 år och uppåt</li>
+        <li><strong>Speltid:</strong> 30-60 minuter per omgång</li>
+        <li><strong>Miljövänlig Produktion:</strong> Tryckt med hållbara material</li>
+      </ul>
     </div>
-  </section>
+  </div>
+
+  <div class="container faq-section">
+    <h2>Vanliga Frågor</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <p class="question"><strong>Fråga:</strong> Hur många spelare kan spela Bluffspelet?</p>
+        <p class="answer"><strong>Svar:</strong> Bluffspelet kan spelas av 3-8 spelare, vilket gör det perfekt för spelkvällar med både små och stora grupper.</p>
+      </div>
+      <div class="faq-item">
+        <p class="question"><strong>Fråga:</strong> Kan spelet spelas med barn?</p>
+        <p class="answer"><strong>Svar:</strong> Ja! Bluffspelet är utformat för att passa spelare från 12 år och uppåt. Vissa utmaningar är mer anpassade för äldre, men de kan enkelt anpassas för yngre spelare.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- preorder -->
-    <form id="form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="Name" required />
+    <section id="preorder">
+      <div class="container">
+        <h2>Förbeställ Bluffspelet</h2>
+        <p>Fyll i dina uppgifter för att förbeställa spelet.</p>
+        <form name="submit-to-google-sheet">
+          <label for="name">Namn:</label>
+          <input id="name" name="name" type="text" placeholder="Ditt namn" required>
     
-      <label for="address">Address:</label>
-      <input type="text" id="address" name="Address" required />
+          <label for="phone">Telefonnummer:</label>
+          <input id="phone" name="phone" type="text" placeholder="Ditt telefonnummer" required>
     
-      <label for="phone">Phone:</label>
-      <input type="text" id="phone" name="Phone" required />
+          <label for="email">E-postadress:</label>
+          <input id="email" name="email" type="email" placeholder="Din e-postadress" required>
     
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="Email" required />
+          <label for="comment">Kommentar:</label>
+          <textarea id="comment" name="comment" placeholder="Eventuell kommentar..."></textarea>
     
-      <label for="message">Meddelande:</label>
-      <textarea id="message" name="Meddelande" rows="4"></textarea>
+          <button type="submit">Förbeställ</button>
+        </form>
     
-      <button type="submit" id="submit-button">Submit</button>
-    </form>
+        <div id="message"></div>
+      </div>
+    </section>
     
-    <div id="message" style="display: none;"></div>
+
+    <!-- GGalleri Section -->
+    <section id="gallery" class="gallery-section">
+      <div class="container">
+        <h2>Utforska Bluffspelet</h2>
+        <p>Få en inblick i hur spelet ser ut och vad som gör det så speciellt!</p>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="/images/BluffMaster.png" alt="Bluffspelet Kort">
+            <p>Högkvalitativa kort designade för skratt och bluff.</p>
+          </div>
+          <div class="gallery-item">
+            <img src="images/på väg.jpg" alt="Bluffspelet i spel">
+            <p></p>
+          </div>
+          <div class="gallery-item">
+            <img src="images/på väg.jpg" alt="Bluffspelet Förpackning">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
     
-    
-    
-      
-      
 
 
-  <!-- Reviews Section -->
-  <section id="reviews" class="reviews reveal">
-    <div class="container">
-      <h2>Vad våra kunder säger</h2>
-      <div class="review">
-        <p>"Bluffspelet var en succé! Alla hade så kul."</p>
-        <span>– Anna, 32</span>
-      </div>
-      <div class="review">
-        <p>"Jag har aldrig skrattat så mycket på en spelkväll."</p>
-        <span>– Johan, 27</span>
-      </div>
+    
+    <!-- Kontakter och Mer om Spelet Sektion -->
+<section id="info" class="info-section">
+  <div class="container">
+    <h2>Kontakta Oss</h2>
+    <div class="contact-info">
+      <p>Har du några frågor eller funderingar om Bluffspelet? Vi hjälper dig gärna!</p>
+      <ul>
+        <li><strong>E-post:</strong> support@bluffspelet.com</li>
+        <li><strong>Telefon:</strong> +46 123 456 789</li>
+        <li><strong>Adress:</strong> Bluffspelet AB, Spelvägen 12, 12345 Stockholm, Sverige</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
+
+    
+    
+
 
   <!-- Footer -->
   <footer>
