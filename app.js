@@ -124,3 +124,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+
+// Toggle Navbar on mobile
+function toggleMenu() {
+  const menu = document.querySelector('.navbar ul');
+  const logo = document.querySelector('.navbar .logo');
+  menu.classList.toggle('active'); // Show/hide menu
+  logo.classList.toggle('active'); // Hide logo when menu is active
+}
